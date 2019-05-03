@@ -58,6 +58,7 @@
 		$(function(){
 			$('.date-picker').datepicker({
 				changeYear: true,
+				yearRange: 'c-10:c+10',
 				showButtonPanel: true,
 				dateFormat: 'yy',
 				onClose: function(dateText, inst){

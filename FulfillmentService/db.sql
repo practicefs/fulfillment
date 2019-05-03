@@ -70,6 +70,10 @@ create table calculate_cost (
 	foreign key (c_tId) references trans_company(t_id)
 ) default charset utf8;
 
+insert into calculate_cost values(100001, '010-1111-2222', date_format('2019-04-28 13:00','%y-%m-%d %H:%i'), 30001, 50001)
+
+select c_iId, c_iTel, c_iDate, c_sId from calculate_cost;
+
 /*
 http://database.sarang.net/?inc=read&aid=851&criteria=mssql&subcrit=&id=&limit=&keyword=&page=
 */
@@ -139,5 +143,35 @@ insert into product(p_name, p_img, p_price, p_amount, p_oId) values('정수기',
 select * from product;
 
 
-insert into invoice() values();
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('홍길동', '010-1111-2222', '수원시 장안구 정자1동', 2, '고려열전', 1, date_format('2019-04-28 13:00','%y-%m-%d %H:%i'), 30001);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('홍길동', '010-1111-2222', '성남시 중원구 성남동', 3, '대단한 스트레칭', 2, date_format('2019-04-28 13:00','%y-%m-%d %H:%i'), 30001);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('전우치', '010-2222-3333', '평택시 신평동', 12, '애견 패드', 2, date_format('2019-04-29 14:25','%y-%m-%d %H:%i'), 30002);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('허균', '010-3333-4444', '천안시 중앙동', 15, '앰플', 4, date_format('2019-04-30 08:25','%y-%m-%d %H:%i'), 30003);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('김철수', '010-4444-5555', '논산시 부창동', 24, '용과', 4, date_format('2019-04-30 09:25','%y-%m-%d %H:%i'), 30003);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('김철수', '010-4444-5555', '대전시 서구 월평동', 26, '레몬', 5, date_format('2019-04-30 09:25','%y-%m-%d %H:%i'), 30003);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('박철수', '010-5555-6666', '부산시 중구 대청동', 21, '토너', 3, date_format('2019-04-30 09:25','%y-%m-%d %H:%i'), 30003);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('박철수', '010-5555-6666', '대구시 수성구 지산1동', 7, '프리모 레비의 말', 1, date_format('2019-04-30 16:25','%y-%m-%d %H:%i'), 30003);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('홍영희', '010-6666-7777', '울산시 울주군 삼남면', 32, '마사지기구', 2, date_format('2019-05-01 12:25','%y-%m-%d %H:%i'), 30003);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('홍지수', '010-7777-8888', '목포시 삼학동', 35, '정수기', 1, date_format('2019-05-02 08:25','%y-%m-%d %H:%i'), 30003);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('김지영', '010-8888-9999', '여수시 삼산면', 19, '마스크', 10, date_format('2019-05-02 08:25','%y-%m-%d %H:%i'), 30003);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('김수현', '010-9999-1111', '순천시 매곡동', 18, '로션', 2, date_format('2019-05-02 09:34','%y-%m-%d %H:%i'), 30003);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('김수현', '010-9999-1111', '순천시 황전면', 21, '토너', 2, date_format('2019-05-02 08:34','%y-%m-%d %H:%i'), 30003);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('김수현', '010-9999-1111', '대전시 동구', 21, '토너', 1, date_format('2019-05-02 09:39','%y-%m-%d %H:%i'), 30003);
+insert into invoice(i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, i_orderDate, i_sId)
+ values('박수현', '010-1212-1212', '대전시 유성구 궁동', 19, '마스크', 3, date_format('2019-05-02 11:39','%y-%m-%d %H:%i'), 30003);
+ 
 
