@@ -6,8 +6,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="../Resources/css/bootstrap.min.css" rel="stylesheet">
-<link href="../Resources/css/jquery-ui.min.css" rel="stylesheet">
+<link href="Resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="Resources/css/jquery-ui.min.css" rel="stylesheet">
 
 <title>Fulfillment Service</title>
 </head>
@@ -49,8 +49,8 @@
 
 <!-- ==================================================================== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="../Resources/js/bootstrap.min.js"></script>
-	<script src="../Resources/js/jquery-ui.min.js"></script>
+	<script src="Resources/js/bootstrap.min.js"></script>
+	<script src="Resources/js/jquery-ui.min.js"></script>
 
 </body>
 </html>

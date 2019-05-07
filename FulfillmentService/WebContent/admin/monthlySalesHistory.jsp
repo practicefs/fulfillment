@@ -7,8 +7,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="../Resources/css/bootstrap.min.css" rel="stylesheet">
-<link href="../Resources/css/jquery-ui.min.css" rel="stylesheet">
+<link href="Resources/css/bootstrap.min.css" rel="stylesheet">
+<link href="Resources/css/jquery-ui.min.css" rel="stylesheet">
 <title>Fulfillment Service</title>
 </head>
 <body>
@@ -32,15 +32,12 @@
 			</div>
 		
 			<br><hr><br>
-		 	참고해야 하는 사이트<br>
-		 	http://bootstrapk.com/components/#navbar
-		 	<br><br>
 		 	<div class="col-xs-11" >
 		 	<table class="table table-bordered">
-  				<tr><th>송장ID</th><th>전화번호</th><th>주문날짜</th><th>쇼핑몰ID</th><th>금액</th></tr>
+  				<tr><th>송장ID</th><th>전화번호</th><th>주문날짜</th><th>쇼핑몰 대금 청구 금액</th></tr>
   				<c:set var="ccList" value="${requestScope.calList}"/>
 				<c:forEach var="cc" items="${ccList}">
-  				<tr><td>${cc.c_iId}</td><td>${cc.c_iTel}</td><td>${cc.c_iDate}</td><td>${cc.c_sId}</td><td></td></tr>
+  				<tr><td>${cc.c_iId}</td><td>${cc.c_iTel}</td><td>${cc.c_iDate}</td><td>${cc.c_sCost}</td><td></td></tr>
   				</c:forEach>
 			</table>
 		 	</div>
@@ -52,8 +49,8 @@
 
 <!-- ==================================================================== -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="../Resources/js/bootstrap.min.js"></script>
-	<script src="../Resources/js/jquery-ui.min.js"></script>
+	<script src="Resources/js/bootstrap.min.js"></script>
+	<script src="Resources/js/jquery-ui.min.js"></script>
 	<script>
 		$(function(){
 			$('.date-picker').datepicker({
