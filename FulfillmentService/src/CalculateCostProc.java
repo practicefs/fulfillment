@@ -39,12 +39,18 @@ public class CalculateCostProc extends HttpServlet {
 		CalculateCostDAO cDao = null;
 		CalculateCostDTO cDto = null;
 		List<CalculateCostDTO> calList = null;
+		InvoiceDTO iDto = null;
+		InvoiceDAO iDao = null;
+		List<InvoiceDTO> invoiceList = null;
+		List<InvoiceDTO> invoiceDetailList = null;
 		int id = 0;
+		int iId = 0;
 		HttpSession session = request.getSession();
 		RequestDispatcher rd = null;
 		String action = request.getParameter("action");
 		
 		switch(action) {
+		/////////////////////////////////////////////////////////////////
 		case "calculate":
 			LOG.trace("calculate 시작");
 
@@ -61,6 +67,41 @@ public class CalculateCostProc extends HttpServlet {
 			rd.forward(request, response);
 			LOG.trace("calculate 성공");
 			break;
+			
+			/////////////////////////////////////////////////////////////////
+		case "invoiceCheck":	// 관리자 - 송장 처리 화면으로 이동하는 부분
+			LOG.trace("관리자 - 송장 처리 화면으로 넘어가기 start");
+			iDao = new InvoiceDAO();
+			
+			invoiceList = iDao.selectInvoiceAll();
+			
+			request.setAttribute("invoiceList", invoiceList);
+			rd = request.getRequestDispatcher("admin/invoiceProcess.jsp");
+			rd.forward(request, response);
+			LOG.trace("관리자 - 송장 처리 화면으로 넘어가기 success");
+			break;
+		/////////////////////////////////////////////////////////////////
+			
+		case "invoiceCheckDetail":	// 관리자 - 송장 처리 화면에서 상세화면으로 이동하는 부분
+			LOG.trace("관리자 - 송장 처리 상세화면으로 넘어가기 start");
+			if (!request.getParameter("iId").equals("")) {
+				iId = Integer.parseInt(request.getParameter("iId"));
+			}
+			iDao = new InvoiceDAO();
+			
+			invoiceDetailList = iDao.selectInvoiceDatailAll(iId);
+			
+			request.setAttribute("invoiceDetailList", invoiceDetailList);
+			request.setAttribute("iId", iId);
+			rd = request.getRequestDispatcher("admin/invoiceProcessDetail.jsp");
+			rd.forward(request, response);
+			LOG.trace("관리자 - 송장 처리 상세화면으로 넘어가기 success");
+			break;
+			
+		/////////////////////////////////////////////////////////////////
+		default:
+			LOG.trace("action이 잘못된 값으로 설정됨");
+
 		}
 		
 	}
