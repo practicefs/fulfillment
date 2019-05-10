@@ -53,6 +53,7 @@
 		 </div>
  	</div>
  </div>
+ <hr><hr>
  
 <jsp:include page="/admin/common/footer.jsp" />
 

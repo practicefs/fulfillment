@@ -59,7 +59,7 @@
 			 </div>
  		</div>
 	 </div>
-	 <br><br><br>
+	 <hr><hr>
  
 <jsp:include page="/admin/common/footer.jsp" />
 

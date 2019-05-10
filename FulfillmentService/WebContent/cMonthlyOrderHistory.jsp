@@ -11,11 +11,11 @@
 <title>Fulfillment Service</title>
 </head>
 <body>
-<jsp:include page="admin/common/header.jsp" />
+<jsp:include page="common/cHeader.jsp" />
 
 <div class="container-fluid">
 	<div class="row">
-		<jsp:include page="admin/common/navigator.jsp"/>
+		<jsp:include page="common/cNavigator.jsp"/>
 	
 		<div class="col-sm-9 col-md-10  main">
 		<div class="col-md-7">
@@ -31,14 +31,12 @@
 			</div>
 		
 			<br><hr><br>
-		 	참고해야 하는 사이트<br>
-		 	http://bootstrapk.com/components/#navbar
+		 
 		 	<br><br>
 		 	<div class="col-xs-11" >
 		 	<table class="table table-bordered">
-  				<tr><th>송장ID</th><th>전화번호</th><th>주문날짜</th><th>쇼핑몰ID</th><th>금액</th></tr>
-  				<tr><td>0000</td><td>010-1234-4567</td><td>2019-04-20</td><td>30001</td><td>12000</td></tr>
-  				<tr><td>gg</td><td>gg</td><td>gg</td><td>gg</td><td>gg</td></tr>
+  				<tr><th>송장ID</th><th>주문자 이름</th><th>전화번호</th><th>주문날짜</th><th>금액</th></tr>
+  				<tr><td></td><td></td><td></td><td></td><td></td></tr>
 			</table>
 		 	</div>
 		 </div>

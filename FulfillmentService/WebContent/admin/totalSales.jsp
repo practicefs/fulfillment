@@ -33,14 +33,18 @@
 
 
 			<br><hr><br>
-		 	참고해야 하는 사이트<br>
-		 	http://bootstrapk.com/components/#navbar
+
 		 	<br><br>
 		 	<div class="col-xs-11" >
 		 	<table class="table table-bordered table table-hover">
-  				<tr><th>쇼핑몰(+)</th><th>구매처(-)</th><th>운송회사(-)</th><th>금액</th></tr>
-  				<tr><td>gg</td><td>gg</td><td>gg</td><td>10000</td></tr>
-  				<tr><td>gg</td><td>gg</td><td>gg</td><td>gg</td></tr>
+  				<tr><th>연도</th><th>쇼핑몰(+)</th><th>구매처(-)</th><th>운송회사(-)</th><th>매출 총이익</th></tr>
+  				<tr><td>2019</td><td></td><td></td><td></td><td></td></tr>
+  				<tr><td>2018</td><td></td><td></td><td></td><td></td></tr>
+  				<tr><td>2017</td><td></td><td></td><td></td><td></td></tr>
+  				<tr><td>2016</td><td></td><td></td><td></td><td></td></tr>
+  				<tr><td>2015</td><td></td><td></td><td></td><td></td></tr>
+  				<tr><td>2014</td><td></td><td></td><td></td><td></td></tr>
+  				<tr><td>2013</td><td></td><td></td><td></td><td></td></tr>
 			</table>
 		 	</div>
 		 </div>

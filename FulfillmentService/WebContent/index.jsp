@@ -22,7 +22,11 @@
 		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
 		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
 		  </ol>
-		
+		  
+			<div class="col-md-6">
+		  		<img src="admin/img/mainSlide/tri.png" alt="logo">
+		  	</div>
+			
 		  <!-- Wrapper for slides -->
 		  <div class="carousel-inner" role="listbox">
 		    <div class="item active">

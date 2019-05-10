@@ -50,6 +50,10 @@
 								  		<th>구매처id</th>
 								  		<td>${p.p_oId}</td>
 								  	</tr>
+								  	<tr>
+								  		<th>이미지</th>
+								  		<td><img src="${pageContext.request.contextPath}/admin/img/${p.pImg}" alt="${p.pName}"></td>
+								  	</tr>
 								  </table>
 							  </div>
 							  </div>
@@ -65,7 +69,7 @@
 			</div>
  		</div>
  	</div>
- 
+ 	<hr><hr>
 <jsp:include page="/admin/common/footer.jsp" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

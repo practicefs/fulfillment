@@ -17,7 +17,7 @@
 		<div class="row">
 			<jsp:include page="/admin/common/navigator.jsp"/>
 	
-			<div class="col-sm-9 col-md-10  main">
+			<div class="col-sm-9 col-md-10">
 			 	<h3>발주 요청</h3>
 				<hr><br>
 	
@@ -53,6 +53,7 @@
 		 	</div>
  		</div>
 	</div>
+	
  
 <jsp:include page="/admin/common/footer.jsp" />
 

@@ -12,7 +12,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#" style="color:white">[일조 Trillion] Fulfillment Service</a>
+        
+        <!-- <a class="navbar-brand" href="#" style="color:white">[일조 Trillion] Fulfillment Service</a> -->
+        <div class="col-md-8">
+        	<!-- <img src="img/mainSlide/tri.png" alt="logo">  -->
+        </div>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
