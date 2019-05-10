@@ -10,10 +10,15 @@ public class InvoiceDTO {
 	private String iOrderDate;
 	private int i_sId;
 	private int i_tId;
+	private String sName;
+	private String tName;
 	private String iCheck;
 
+	
+
 	public InvoiceDTO(int iId, String iConsigneeName, String iConsigneeTel, String iConsigneeAddr, int i_pId,
-			String i_pName, int iAmount, String iOrderDate, int i_sId, int i_tId, String iCheck) {
+			String i_pName, int iAmount, String iOrderDate, int i_sId, int i_tId, String sName, String tName,
+			String iCheck) {
 		this.iId = iId;
 		this.iConsigneeName = iConsigneeName;
 		this.iConsigneeTel = iConsigneeTel;
@@ -24,6 +29,8 @@ public class InvoiceDTO {
 		this.iOrderDate = iOrderDate;
 		this.i_sId = i_sId;
 		this.i_tId = i_tId;
+		this.sName = sName;
+		this.tName = tName;
 		this.iCheck = iCheck;
 	}
 
@@ -110,6 +117,22 @@ public class InvoiceDTO {
 		this.i_tId = i_tId;
 	}
 
+	public String getsName() {
+		return sName;
+	}
+
+	public void setsName(String sName) {
+		this.sName = sName;
+	}
+
+	public String gettName() {
+		return tName;
+	}
+
+	public void settName(String tName) {
+		this.tName = tName;
+	}
+
 	public String getiCheck() {
 		return iCheck;
 	}
@@ -122,8 +145,7 @@ public class InvoiceDTO {
 	public String toString() {
 		return "InvoiceDTO [iId=" + iId + ", iConsigneeName=" + iConsigneeName + ", iConsigneeTel=" + iConsigneeTel
 				+ ", iConsigneeAddr=" + iConsigneeAddr + ", i_pId=" + i_pId + ", i_pName=" + i_pName + ", iAmount="
-				+ iAmount + ", iOrderDate=" + iOrderDate + ", i_sId=" + i_sId + ", i_tId=" + i_tId + ", iCheck="
-				+ iCheck + "]";
+				+ iAmount + ", iOrderDate=" + iOrderDate + ", i_sId=" + i_sId + ", i_tId=" + i_tId + ", sName=" + sName
+				+ ", tName=" + tName + ", iCheck=" + iCheck + "]";
 	}
-
 }

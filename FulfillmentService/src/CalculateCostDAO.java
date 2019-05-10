@@ -171,7 +171,7 @@ public class CalculateCostDAO {
 	public void insertDBTable() {
 		LOG.trace("CalculateCostDAO insertDBTable() start");
 		String sql = "insert into calculate_cost(c_iTel, c_iDate, c_sCost, c_oCost)" + 
-				" select I.i_consigneeTel, I.i_orderDate, sum(P.p_price*I.i_amount), (sum(P.p_price*I.i_amount)*1.1 + 10000) from invoice as I" + 
+				" select I.i_consigneeTel, I.i_orderDate, (sum(P.p_price*I.i_amount)*1.1 + 10000), sum(P.p_price*I.i_amount) from invoice as I" + 
 				" inner join product as P on I.i_pId=P.p_id and I.i_check='Y'" + 
 				" group by I.i_consigneeTel, I.i_orderDate order by I.i_id;";
 		PreparedStatement pStmt = null;
@@ -191,6 +191,39 @@ public class CalculateCostDAO {
 			}
 		}
 		LOG.trace("CalculateCostDAO insertDBTable() success");
+	}
+	
+	public List<CalculateCostDTO> selectAllTotalSales() {
+		LOG.trace("CalculateCostDAO selectAllTotalSales() start");
+		String sql = "select c_iDate, c_sCost, c_oCost, c_tCost from calculate_cost;";
+		PreparedStatement pStmt = null;
+		List<CalculateCostDTO> tList = new ArrayList<CalculateCostDTO>();
+
+		try {
+			pStmt = conn.prepareStatement(sql);
+			ResultSet rs = pStmt.executeQuery();
+
+			while (rs.next()) {
+				CalculateCostDTO c = new CalculateCostDTO();
+				c.setC_iDate(rs.getString(1).substring(0, 16));
+				c.setC_sCost(rs.getInt(2));
+				c.setC_comId(rs.getInt(3));
+				c.setC_tCost(rs.getInt(4));
+				tList.add(c);
+			}
+		} catch (Exception e) {
+			LOG.trace("CalculateCostDAO selectAllTotalSales() ERROR");
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pStmt != null && !pStmt.isClosed())
+					pStmt.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		LOG.trace("CalculateCostDAO selectAllTotalSales() success");
+		return tList;
 	}
 
 }

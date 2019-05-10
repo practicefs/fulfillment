@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -123,7 +124,6 @@ public class ProductProc extends HttpServlet {
 			
 			pDao = new ProductDAO();
 			pDao.SendOrderRequest(orderAmount, pId);
-			
 			
 			String message = "발주 요청 완료. 내일 오전 10시에 입고됩니다.";
 			request.setAttribute("message", message);

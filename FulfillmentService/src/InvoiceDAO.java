@@ -35,7 +35,10 @@ public class InvoiceDAO {
 		LOG.trace("InvoiceDAO selectInvoiceAll() start");
 		PreparedStatement pStmt = null;
 		List<InvoiceDTO> invoiceList = new ArrayList<>();
-		String sql = "select i_id, i_consigneeName, i_orderDate, i_sId, i_tId, i_check from invoice order by i_orderDate;";
+		String sql = "select I.i_id, I.i_consigneeName, I.i_orderDate, s.s_name, t.t_name, i_check from invoice as I" + 
+				" inner join shopping_mall as s on I.i_pId=s.s_id" + 
+				" inner join trans_company as t on I.i_pId=t.t_id and I.i_check='Y'" + 
+				" group by I.i_consigneeTel, I.i_orderDate order by I.i_id;";
 		
 		try {
 			pStmt = conn.prepareStatement(sql);
@@ -46,8 +49,8 @@ public class InvoiceDAO {
 				i.setiConsigneeName(rs.getString(2));
 				i.setiOrderDate(rs.getString(3).substring(0, 16));
 				//LOG.trace("날짜"+rs.getString(3));
-				i.setI_sId(rs.getInt(4));
-				i.setI_tId(rs.getInt(5));
+				i.setsName(rs.getString(4));
+				i.settName(rs.getString(5));
 				i.setiCheck(rs.getString(6));
 				invoiceList.add(i);
 			}
