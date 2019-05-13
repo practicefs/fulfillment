@@ -9,16 +9,15 @@ public class InvoiceDTO {
 	private int iAmount;
 	private String iOrderDate;
 	private int i_sId;
+	private String i_sName;
 	private int i_tId;
-	private String sName;
-	private String tName;
+	private String i_tName;
 	private String iCheck;
-
-	
+	private int cost;
 
 	public InvoiceDTO(int iId, String iConsigneeName, String iConsigneeTel, String iConsigneeAddr, int i_pId,
-			String i_pName, int iAmount, String iOrderDate, int i_sId, int i_tId, String sName, String tName,
-			String iCheck) {
+			String i_pName, int iAmount, String iOrderDate, int i_sId, String i_sName, int i_tId, String i_tName,
+			String iCheck, int cost) {
 		this.iId = iId;
 		this.iConsigneeName = iConsigneeName;
 		this.iConsigneeTel = iConsigneeTel;
@@ -28,10 +27,11 @@ public class InvoiceDTO {
 		this.iAmount = iAmount;
 		this.iOrderDate = iOrderDate;
 		this.i_sId = i_sId;
+		this.i_sName = i_sName;
 		this.i_tId = i_tId;
-		this.sName = sName;
-		this.tName = tName;
+		this.i_tName = i_tName;
 		this.iCheck = iCheck;
+		this.cost = cost;
 	}
 
 	public InvoiceDTO() {
@@ -109,6 +109,14 @@ public class InvoiceDTO {
 		this.i_sId = i_sId;
 	}
 
+	public String getI_sName() {
+		return i_sName;
+	}
+
+	public void setI_sName(String i_sName) {
+		this.i_sName = i_sName;
+	}
+
 	public int getI_tId() {
 		return i_tId;
 	}
@@ -117,20 +125,12 @@ public class InvoiceDTO {
 		this.i_tId = i_tId;
 	}
 
-	public String getsName() {
-		return sName;
+	public String getI_tName() {
+		return i_tName;
 	}
 
-	public void setsName(String sName) {
-		this.sName = sName;
-	}
-
-	public String gettName() {
-		return tName;
-	}
-
-	public void settName(String tName) {
-		this.tName = tName;
+	public void setI_tName(String i_tName) {
+		this.i_tName = i_tName;
 	}
 
 	public String getiCheck() {
@@ -141,11 +141,20 @@ public class InvoiceDTO {
 		this.iCheck = iCheck;
 	}
 
+	public int getCost() {
+		return cost;
+	}
+
+	public void setCost(int cost) {
+		this.cost = cost;
+	}
+
 	@Override
 	public String toString() {
 		return "InvoiceDTO [iId=" + iId + ", iConsigneeName=" + iConsigneeName + ", iConsigneeTel=" + iConsigneeTel
 				+ ", iConsigneeAddr=" + iConsigneeAddr + ", i_pId=" + i_pId + ", i_pName=" + i_pName + ", iAmount="
-				+ iAmount + ", iOrderDate=" + iOrderDate + ", i_sId=" + i_sId + ", i_tId=" + i_tId + ", sName=" + sName
-				+ ", tName=" + tName + ", iCheck=" + iCheck + "]";
+				+ iAmount + ", iOrderDate=" + iOrderDate + ", i_sId=" + i_sId + ", i_sName=" + i_sName + ", i_tId="
+				+ i_tId + ", i_tName=" + i_tName + ", iCheck=" + iCheck + ", cost=" + cost + "]";
 	}
+
 }
