@@ -139,11 +139,13 @@ insert into product(p_name, p_img, p_price, p_amount, p_oId) values('정수기',
 
 select * from product;
 select * from shopping_mall;
+select * from invoice;
 
 select P.p_id, P.p_name, P.p_price, P.p_amount, P.p_oId, O.o_name from product as P
  inner join order_company as O on P.p_oId=O.o_id
  order by P.p_amount;
 
+select * from calculate_cost;
 
 /* *********************************************************** */
 /* 아래서부터는 eclipse에서 사용하는 쿼리문들. 실행하지 말 것  */
@@ -163,6 +165,9 @@ ignore 1 rows
 (i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, @var1, i_sId, i_tId)
  set i_orderDate = timestamp(str_to_date(@var1, '%Y-%m-%d %H:%i'));
 
+/* i.id 새로 정렬하는 부분 */
+set @CNT = 100000;
+update invoice set invoice.i_id = @CNT:=@CNT+1;
 
 /* 재고 화면 상세보기 클릭 시 출력되는 쿼리문 */
 select P.p_id, P.p_name, P.p_img, P.p_price, P.p_amount, P.p_oId, O.o_name from product as P
