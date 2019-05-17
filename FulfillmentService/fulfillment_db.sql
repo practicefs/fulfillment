@@ -139,13 +139,16 @@ insert into product(p_name, p_img, p_price, p_amount, p_oId) values('정수기',
 
 select * from product;
 select * from shopping_mall;
+select * from order_company;
+select * from trans_company;
 select * from invoice;
+select * from calculate_cost;
 
 select P.p_id, P.p_name, P.p_price, P.p_amount, P.p_oId, O.o_name from product as P
  inner join order_company as O on P.p_oId=O.o_id
  order by P.p_amount;
 
-select * from calculate_cost;
+
 
 /* *********************************************************** */
 /* 아래서부터는 eclipse에서 사용하는 쿼리문들. 실행하지 말 것  */
@@ -165,7 +168,7 @@ ignore 1 rows
 (i_consigneeName, i_consigneeTel, i_consigneeAddr, i_pId, i_pName, i_amount, @var1, i_sId, i_tId)
  set i_orderDate = timestamp(str_to_date(@var1, '%Y-%m-%d %H:%i'));
 
-/* i.id 새로 정렬하는 부분 */
+/* csv 파일 읽어오기 - i.id 새로 정렬하는 부분 */
 set @CNT = 100000;
 update invoice set invoice.i_id = @CNT:=@CNT+1;
 
@@ -211,7 +214,7 @@ select * from invoice where i_check='N'
 */
 delete from calculate_cost;
 insert into calculate_cost(c_iTel, c_iDate, c_sCost, c_oCost)
- select I.i_consigneeTel, I.i_orderDate, sum(P.p_price*I.i_amount), (sum(P.p_price*I.i_amount)*1.1 + 10000) from invoice as I
+ select I.i_consigneeTel, I.i_orderDate, (sum(P.p_price*I.i_amount)*1.1 + 10000), sum(P.p_price*I.i_amount) from invoice as I
  inner join product as P on I.i_pId=P.p_id and I.i_check='Y'
  group by I.i_consigneeTel, I.i_orderDate order by I.i_id;
 
