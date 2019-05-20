@@ -7,6 +7,7 @@
 <title>Alert Message</title>
 </head>
 <body>
+
 	<script type="text/javascript">
 		var message = '${ requestScope.message }';
 		var returnUrl = '${ requestScope.url }';
