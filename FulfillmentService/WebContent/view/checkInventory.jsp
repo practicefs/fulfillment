@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -23,7 +23,7 @@
 		 	<h3>재고 확인&nbsp;&nbsp;	
 			<div class="btn-group">
 				<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-			   	카테고리 <span class="caret"></span>
+			   	category <span class="caret"></span>
 				</button>
 			 	<ul class="dropdown-menu" role="menu">
 			    	<li><a href="#animalGoods">애완용품</a></li>
